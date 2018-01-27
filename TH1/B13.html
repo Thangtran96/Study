@@ -1,0 +1,30 @@
+<html>
+    <header>
+        <title>B13</title>
+    </header>
+    
+    <body>
+       <h1>Bài 13</h1>
+       <form>
+           <input type="submit" onclick="A()"/>
+       </form>
+        <script>
+            function A(){
+                do{
+                    var xaukytu = prompt("Nhập chuỗi");
+                    var mangTu = new Array();
+                    mangTu = xaukytu.split(" ");
+                    var i;
+                    var minW=100; var maxW=0; var s = mangTu.length;
+                    for( i=0; i < s ; ++i){
+                        minW = minW > mangTu[i].length ? i : minW;
+                        maxW = maxW < mangTu[i].length ? i : maxW;
+                    }
+                    alert("Từ có số ký tự dài nhất là " + mangTu[maxW] + " có " + mangTu[maxW].length + " ký tự");
+                    alert("Từ có số ký tự ngắn nhất là " + mangTu[minW] + " có " + mangTu[minW].length + " ký tự" );
+                }while(confirm("Bạn có muốn tiếp tục không ?") );
+            }
+        </script>
+    </body>
+    
+</html>

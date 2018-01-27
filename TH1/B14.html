@@ -1,0 +1,55 @@
+<html>
+    <header>
+        <title>Bài 14</title>
+         <script>
+            function Bai(){
+                var w = document.getElementById("w").value;
+                var h = document.getElementById("h").value;
+                if( w < 0 || h < 0 ) {
+                    alert("Không thể nhập dữ liệu < 0 ");
+                    Huy();
+                }else{
+                var bMI = w/(h*h); bMI = bMI.toFixed(1);
+                var traloi = "BMI của bạn là <b>" + bMI + "</b>, bạn ở mức ";
+                if(bMI < 18.5 ){ kq="Dưới chuẩn"; } else{
+                if(bMI >= 18.5 && bMI <= 25) { kq="Chuẩn"; }
+                if(bMI > 25 && bMI <= 30 ){ kq="Thừa cân"; }
+                if(bMI > 30 && bMI <= 40 ){ kq="Béo, cần giảm cân"; }
+                if(bMI > 40 ){ kq="Rất béo, cần giảm cân ngay"; } }
+                document.getElementById("traloi").innerHTML = traloi+"<i>"+kq+"</i>";}
+            }
+             
+            function Huy(){
+                document.getElementById("w").value = null;
+                document.getElementById("h").value = null;
+                document.getElementById("traloi").innerHTML = null;
+            }
+        </script>
+    </header>
+    <body>
+        <form>
+            <table>
+            <tr>
+                <td><p>Chiều cao</p> </td>
+                <td><input type="text" id="h"/></td>
+                <td align="left">m</td>
+            </tr>
+            <tr>
+                <td><p>Cân nặng</p> </td>
+                <td ><input type="text" id="w"/></td>
+                <td align="left">kg</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                <p id="traloi"></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right">
+                <input type="button" value="Thực hiện" onclick="Bai()"/>
+                <input type="button" value="Hủy" onclick="Huy()" /></td>
+            </tr>
+            </table>
+        </form>
+    </body>
+</html>
